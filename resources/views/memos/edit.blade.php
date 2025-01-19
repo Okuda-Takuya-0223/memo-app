@@ -6,15 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>memos edit</title>
-    <link rel="stylesheet" href="{{ asset("css/style.css") }}">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
 
 <body>
     <a href="{{ route('memos.index') }}">戻る</a>
     <h1>更新</h1>
-    <form action="{{ route('memos.update',$memo) }}" method="post">
-    @csrf
-    @method("PATCH")
+    <form action="{{ route('memos.update', $memo) }}" method="post">
+        @csrf
+        @method('PATCH')
         <p>
             <label for="title">タイトル</label><br>
             <input type="text" name="title" id="title" value="{{ $memo->title }}">

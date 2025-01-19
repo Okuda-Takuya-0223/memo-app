@@ -53,7 +53,15 @@ class MemoController extends Controller
         $memo->body = $request->body;
 
         $memo->save();
-        //登録したらindexに戻る
+        //更新したらindexに戻る
+        return redirect(route("memos.index"));
+    }
+
+    public function destroy($id)
+    {
+        $memo=Memo::find($id);
+        $memo->delete();
+        //削除したらindexに戻る
         return redirect(route("memos.index"));
     }
 }
