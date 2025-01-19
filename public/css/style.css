@@ -12,3 +12,5 @@
 .button-group > *:not(:last-child){
     margin-right:10px;
 }
+.error{
+color:red;}
